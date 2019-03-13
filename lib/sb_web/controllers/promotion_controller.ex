@@ -9,15 +9,16 @@ defmodule SbWeb.PromotionController do
   def index(conn, _params) do
     IO.inspect(_params)
 
-    case _params["state"] do
-      val ->
-        promotions = Cases.list_promotions_by_state(String.to_existing_atom(val))
-        render(conn, "index.json", promotions: promotions)
-
-      nil ->
-        promotions = Cases.list_promotions()
-        render(conn, "index.json", promotions: promotions)
+    val = _params["state"]
+    if (val != nil) do
+      promotions = Cases.list_promotions_by_state(String.to_existing_atom(val))
+      render(conn, "index.json", promotions: promotions)
+    else
+      promotions = Cases.list_promotions()
+      render(conn, "index.json", promotions: promotions)
     end
+
+
   end
 
   def index(conn, %{"state" => state}) do

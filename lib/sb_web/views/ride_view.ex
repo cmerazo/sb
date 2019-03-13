@@ -18,7 +18,7 @@ defmodule SbWeb.RideView do
     %{
       id: ride.id,
       when: ride.when,
-      ammount: CurrencyFormatter.format(ride.ammount, :eur),
+      ammount: CurrencyFormatter.format(Float.to_string(ride.ammount, decimals: 2), :eur),
       location_initial_lat: ride.location_initial_lat,
       location_final_lat: ride.location_final_lat,
       location_initial_lng: ride.location_initial_lng,
@@ -30,7 +30,7 @@ defmodule SbWeb.RideView do
     %{
       id: ride.id,
       when: ride.when,
-      ammount: CurrencyFormatter.format(ride.ammount, :eur),
+      ammount: CurrencyFormatter.format(Float.to_string(ride.ammount, decimals: 2), :eur),
       location_initial_lat: ride.location_initial_lat,
       location_final_lat: ride.location_final_lat,
       location_initial_lng: ride.location_initial_lng,

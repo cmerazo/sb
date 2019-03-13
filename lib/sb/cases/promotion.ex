@@ -7,8 +7,8 @@ defmodule Sb.Cases.Promotion do
     field :code, :string
     field :expiration, :naive_datetime
     field :state, :boolean, default: false
-    belongs_to :event_id, Event
-    belongs_to :client_id, Client
+    belongs_to :event, Event
+    belongs_to :client, Client
 
     # field :event_id, :id
     # field :client_id, :id
@@ -21,6 +21,8 @@ defmodule Sb.Cases.Promotion do
     promotion
     |> cast(attrs, [:code, :ammount, :expiration, :state, :client_id, :event_id])
     |> validate_required([:code, :ammount, :expiration, :state, :client_id, :event_id])
+    |> foreign_key_constraint(:event_id)
+    |> foreign_key_constraint(:client_id)
   end
 
   def randomizer(length, type \\ :all) do

@@ -14,7 +14,7 @@ defmodule SbWeb.PromotionView do
     %{
       id: promotion.id,
       code: promotion.code,
-      ammount: CurrencyFormatter.format(promotion.ammount, :eur),
+      ammount: CurrencyFormatter.format(Float.to_string(promotion.ammount, decimals: 2), :eur),
       expiration: promotion.expiration,
       state: promotion.state
     }

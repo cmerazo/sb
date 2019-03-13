@@ -9,7 +9,7 @@ defmodule Sb.Cases.Ride do
     field :location_initial_lat, :float
     field :location_initial_lng, :float
     field :when, :naive_datetime
-    belongs_to :promotion_id, Promotion
+    belongs_to :promotion, Promotion
     # field :promotion_id, :id
 
     timestamps()
@@ -34,5 +34,6 @@ defmodule Sb.Cases.Ride do
       :location_initial_lng,
       :location_final_lng
     ])
+    |> foreign_key_constraint(:promotion_id)
   end
 end
