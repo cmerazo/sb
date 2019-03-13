@@ -15,23 +15,28 @@ defmodule SbWeb.RideView do
   end
 
   def render("ride.json", %{ride: ride}) do
-    %{id: ride.id,
+    %{
+      id: ride.id,
       when: ride.when,
-      ammount: ride.ammount,
+      ammount: CurrencyFormatter.format(ride.ammount, :eur),
       location_initial_lat: ride.location_initial_lat,
       location_final_lat: ride.location_final_lat,
       location_initial_lng: ride.location_initial_lng,
-      location_final_lng: ride.location_final_lng}
+      location_final_lng: ride.location_final_lng
+    }
   end
+
   def render("ride_p.json", %{ride: ride, poliline: poliline}) do
-    %{id: ride.id,
+    %{
+      id: ride.id,
       when: ride.when,
-      ammount: ride.ammount,
+      ammount: CurrencyFormatter.format(ride.ammount, :eur),
       location_initial_lat: ride.location_initial_lat,
       location_final_lat: ride.location_final_lat,
       location_initial_lng: ride.location_initial_lng,
       location_final_lng: ride.location_final_lng,
-      poliline: poliline}
+      poliline: poliline
+    }
   end
 
   def render("not_found_event.json", %{code: code}) do
@@ -49,6 +54,4 @@ defmodule SbWeb.RideView do
   def render("google_error.json", %{code: code, message: msg}) do
     %{code: 502, message: "conection gmap error #{code}, message: #{msg}"}
   end
-
-
 end

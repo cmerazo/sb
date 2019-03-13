@@ -19,6 +19,5 @@ defmodule Sb.Repo.Migrations.CreateEvents do
 
       timestamps()
     end
-
   end
 end

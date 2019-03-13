@@ -27,7 +27,10 @@ config :phoenix, :json_library, Jason
 
 # Config Google Maps
 config :google_maps,
-       api_key: "AIzaSyAGi2DzC-UBYivHrYwejfe0CNCJOmhukxM"
+  api_key: "AIzaSyAGi2DzC-UBYivHrYwejfe0CNCJOmhukxM"
+
+# Config money formatter
+config :currency_formatter, :whitelist, ["EUR", "USD"]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

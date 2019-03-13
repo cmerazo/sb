@@ -9,6 +9,5 @@ defmodule Sb.Repo.Migrations.CreateClients do
 
       timestamps()
     end
-
   end
 end

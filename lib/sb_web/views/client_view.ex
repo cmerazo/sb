@@ -11,9 +11,11 @@ defmodule SbWeb.ClientView do
   end
 
   def render("client.json", %{client: client}) do
-    %{id: client.id,
+    %{
+      id: client.id,
       first_name: client.first_name,
       last_name: client.last_name,
-      identification: client.identification}
+      identification: client.identification
+    }
   end
 end

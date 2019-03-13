@@ -43,7 +43,8 @@ defmodule Sb.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:google_maps, "~> 0.11"}
+      {:google_maps, "~> 0.11"},
+      {:currency_formatter, "~> 0.4"}
     ]
   end
 

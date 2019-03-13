@@ -11,15 +11,16 @@ defmodule SbWeb.PromotionView do
   end
 
   def render("promotion.json", %{promotion: promotion}) do
-    %{id: promotion.id,
+    %{
+      id: promotion.id,
       code: promotion.code,
-      ammount: promotion.ammount,
+      ammount: CurrencyFormatter.format(promotion.ammount, :eur),
       expiration: promotion.expiration,
-      state: promotion.state}
+      state: promotion.state
+    }
   end
 
   def render("not_found_event.json", _assigns) do
     %{code: 404, message: "event not found"}
   end
-
 end

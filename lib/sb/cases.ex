@@ -213,7 +213,6 @@ defmodule Sb.Cases do
     Repo.all(Promotion)
   end
 
-
   @doc """
   Returns the list of promotions.
 
@@ -226,8 +225,6 @@ defmodule Sb.Cases do
   def list_promotions_by_state(state) do
     Repo.all(from(p in Promotion, where: p.state == ^state))
   end
-
-
 
   @doc """
   Gets a single promotion.
@@ -245,7 +242,6 @@ defmodule Sb.Cases do
   """
   def get_promotion!(id), do: Repo.get!(Promotion, id)
 
-
   @doc """
   Gets a single promotion by code.
 
@@ -261,7 +257,7 @@ defmodule Sb.Cases do
 
   """
   def get_promotion_by_code!(code) do
-    Repo.one!(from p  in Promotion, where: p.code == ^code)
+    Repo.one!(from p in Promotion, where: p.code == ^code)
   end
 
   @doc """

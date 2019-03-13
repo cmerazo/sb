@@ -22,20 +22,14 @@ defmodule SbWeb.Router do
     resources "/events", EventController, except: [:new, :edit]
     resources "/promotions", PromotionController, except: [:new, :edit]
     resources "/rides", RideController, except: [:new, :edit]
-
-
   end
 
   # Other scopes may use custom stacks.
-   scope "/v1", SbWeb do
-     pipe_through :api
-       resources "/clients", ClientController, except: [:new, :edit]
-       resources "/events", EventController, except: [:new, :edit]
-       resources "/promotions", PromotionController, except: [:new, :edit]
-       resources "/rides", RideController, except: [:new, :edit]
-
-   end
-
-
-
+  scope "/v1", SbWeb do
+    pipe_through :api
+    resources "/clients", ClientController, except: [:new, :edit]
+    resources "/events", EventController, except: [:new, :edit]
+    resources "/promotions", PromotionController, except: [:new, :edit]
+    resources "/rides", RideController, except: [:new, :edit]
+  end
 end

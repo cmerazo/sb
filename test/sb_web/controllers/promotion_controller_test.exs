@@ -59,7 +59,10 @@ defmodule SbWeb.PromotionControllerTest do
   describe "update promotion" do
     setup [:create_promotion]
 
-    test "renders promotion when data is valid", %{conn: conn, promotion: %Promotion{id: id} = promotion} do
+    test "renders promotion when data is valid", %{
+      conn: conn,
+      promotion: %Promotion{id: id} = promotion
+    } do
       conn = put(conn, Routes.promotion_path(conn, :update, promotion), promotion: @update_attrs)
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 

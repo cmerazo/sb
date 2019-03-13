@@ -20,7 +20,14 @@ defmodule SbWeb.RideControllerTest do
     location_initial_lng: 456.7,
     when: ~N[2011-05-18 15:01:01]
   }
-  @invalid_attrs %{ammount: nil, location_final_lat: nil, location_final_lng: nil, location_initial_lat: nil, location_initial_lng: nil, when: nil}
+  @invalid_attrs %{
+    ammount: nil,
+    location_final_lat: nil,
+    location_final_lng: nil,
+    location_initial_lat: nil,
+    location_initial_lng: nil,
+    when: nil
+  }
 
   def fixture(:ride) do
     {:ok, ride} = Cases.create_ride(@create_attrs)

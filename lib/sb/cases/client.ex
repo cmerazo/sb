@@ -2,7 +2,6 @@ defmodule Sb.Cases.Client do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "clients" do
     field :first_name, :string
     field :identification, :string

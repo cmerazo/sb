@@ -2,14 +2,16 @@ defmodule Sb.Cases.Promotion do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "promotions" do
     field :ammount, :float
     field :code, :string
     field :expiration, :naive_datetime
     field :state, :boolean, default: false
-    field :event_id, :id
-    field :client_id, :id
+    belongs_to :event_id, Event
+    belongs_to :client_id, Client
+
+    # field :event_id, :id
+    # field :client_id, :id
 
     timestamps()
   end
@@ -39,14 +41,13 @@ defmodule Sb.Cases.Promotion do
   end
 
   @doc false
-  defp get_range(length) when length > 1, do: (1..length)
+  defp get_range(length) when length > 1, do: 1..length
   defp get_range(length), do: [1]
 
   @doc false
   defp do_randomizer(length, lists) do
     get_range(length)
-    |> Enum.reduce([], fn(_, acc) -> [Enum.random(lists) | acc] end)
+    |> Enum.reduce([], fn _, acc -> [Enum.random(lists) | acc] end)
     |> Enum.join("")
   end
-
 end

@@ -57,7 +57,7 @@ client_id  | integer  | required
 code       | String   | required
 ammount    | float    | required
 expiration | datetime | required
-state      | boolean  | required | {true is active|false is deactive}
+state      | boolean  | required
 
 ### Events
 
@@ -104,7 +104,7 @@ request (sample)
 
 response (sample)
 
-{"data":{"ammount":2.0e3,"code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}}
+{"data":{"ammount":"€2.000,00","code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}}
 
 ### a promotion can be deactivated
 
@@ -118,7 +118,7 @@ request (sample)
 
 reponse (sample)
 
-{"data":{"ammount":2.0e3,"code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}}
+{"data":{"ammount":"€2.000,00","code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}}
 
 ### Return active promo codes
 
@@ -127,7 +127,7 @@ GET /v1/promotions?state=true
 ```
 response (sample)
 
-{"data":[{"ammount":2.0e3,"code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}]}
+{"data":[{"ammount":"€2.000,00","code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}]}
 
 ### Return all promo codes
 
@@ -137,7 +137,7 @@ GET /v1/promotions
 
 response
 
-{"data":[{"ammount":2.0e3,"code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}]}
+{"data":[{"ammount":"€2.000,00","code":"JkOL","expiration":"2019-04-13T03:00:00","id":8,"state":true}]}
 
 ### To test the validity of the promo code
 
@@ -299,4 +299,4 @@ curl -H "Content-Type: application/json" -X POST -d '{"ride":{"promotion_code":"
 
 response
 
-{"ammount":2.0e3,"id":3,"location_final_lat":3.3983600699708756,"location_final_lng":-76.55779838562012,"location_initial_lat":3.3986171092087156,"location_initial_lng":-76.53779983520508,"poliline":[{"bounds":{"northeast":{"lat":3.3988092,"lng":-76.5378332},"southwest":{"lat":3.3976252,"lng":-76.55744609999999}},"copyrights":"Map data ©2019 Google","legs":[{"distance":{"text":"2.3 km","value":2323},"duration":{"text":"8 mins","value":462},"end_address":"Cl. 1 #66-42, Cali, Valle del Cauca, Colombia","end_location":{"lat":3.3976252,"lng":-76.55744609999999},"start_address":"Cl. 13 #10, Cali, Valle del Cauca, Colombia","start_location":{"lat":3.3986273,"lng":-76.5378332},"steps":[{"distance":{"text":"50 m","value":50},"duration":{"text":"1 min","value":14},"end_location":{"lat":3.3981947,"lng":-76.53796609999999},"html_instructions":"Head <b>south</b> on <b>Cl. 13</b> toward <b>Cra. 66</b>","polyline":{"points":"mxvSlxcrM\\Hx@P"},"start_location":{"lat":3.3986273,"lng":-76.5378332},"travel_mode":"DRIVING"},{"distance":{"text":"2.1 km","value":2064},"duration":{"text":"7 mins","value":422},"end_location":{"lat":3.3987452,"lng":-76.5564582},"html_instructions":"Turn <b>right</b> at the 1st cross street onto <b>Cra. 66</b>","maneuver":"turn-right","polyline":{"points":"uuvShycrMAbBCdB?v@?x@Av@?v@?dCAbC?bB?`B?H?F?V?V?J?HAh@?f@?rB@tB?P?P?~@?~@?Z?Z?bA@JAt@@R?P?H?H?FAF@dA?bA?r@?t@?n@Ap@Ap@Br@?~A?p@?p@ArAArA?X?V?~@A~@@nA@pAE`Dm@vASl@GTCTCX?ZAnKAHAFGL"},"start_location":{"lat":3.3981947,"lng":-76.53796609999999},"travel_mode":"DRIVING"},{"distance":{"text":"0.1 km","value":138},"duration":{"text":"1 min","value":14},"end_location":{"lat":3.3978631,"lng":-76.5568663},"html_instructions":"At the roundabout, take the <b>2nd</b> exit onto <b>Cl. 1</b>","maneuver":"roundabout-right","polyline":{"points":"eyvSzlgrMCBEFAH?F@D@D@BBDB@BBF@D?D?FABADCN?P@TD@?@?D?BA~@V"},"start_location":{"lat":3.3987452,"lng":-76.5564582},"travel_mode":"DRIVING"},{"distance":{"text":"71 m","value":71},"duration":{"text":"1 min","value":12},"end_location":{"lat":3.3976252,"lng":-76.55744609999999},"html_instructions":"Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>","maneuver":"turn-right","polyline":{"points":"ssvSlogrMAB?@?D?B@B@DN^P`@HV"},"start_location":{"lat":3.3978631,"lng":-76.5568663},"travel_mode":"DRIVING"}],"traffic_speed_entry":[],"via_waypoint":[]}],"overview_polyline":{"points":"mxvSlxcrMvAZEhEA`FApOAfB@lG@pI?rFChEBvFCxE@`HE`Dm@vA[bAGn@AjLCPKPGP@LJPJDJ?JCTCj@FHA~@VAB?F@Fl@~A"},"summary":"Cra. 66","warnings":[],"waypoint_order":[]}],"when":"2019-03-13T01:26:44"}
+{"ammount":"€2.000,00","id":3,"location_final_lat":3.3983600699708756,"location_final_lng":-76.55779838562012,"location_initial_lat":3.3986171092087156,"location_initial_lng":-76.53779983520508,"poliline":[{"bounds":{"northeast":{"lat":3.3988092,"lng":-76.5378332},"southwest":{"lat":3.3976252,"lng":-76.55744609999999}},"copyrights":"Map data ©2019 Google","legs":[{"distance":{"text":"2.3 km","value":2323},"duration":{"text":"8 mins","value":462},"end_address":"Cl. 1 #66-42, Cali, Valle del Cauca, Colombia","end_location":{"lat":3.3976252,"lng":-76.55744609999999},"start_address":"Cl. 13 #10, Cali, Valle del Cauca, Colombia","start_location":{"lat":3.3986273,"lng":-76.5378332},"steps":[{"distance":{"text":"50 m","value":50},"duration":{"text":"1 min","value":14},"end_location":{"lat":3.3981947,"lng":-76.53796609999999},"html_instructions":"Head <b>south</b> on <b>Cl. 13</b> toward <b>Cra. 66</b>","polyline":{"points":"mxvSlxcrM\\Hx@P"},"start_location":{"lat":3.3986273,"lng":-76.5378332},"travel_mode":"DRIVING"},{"distance":{"text":"2.1 km","value":2064},"duration":{"text":"7 mins","value":422},"end_location":{"lat":3.3987452,"lng":-76.5564582},"html_instructions":"Turn <b>right</b> at the 1st cross street onto <b>Cra. 66</b>","maneuver":"turn-right","polyline":{"points":"uuvShycrMAbBCdB?v@?x@Av@?v@?dCAbC?bB?`B?H?F?V?V?J?HAh@?f@?rB@tB?P?P?~@?~@?Z?Z?bA@JAt@@R?P?H?H?FAF@dA?bA?r@?t@?n@Ap@Ap@Br@?~A?p@?p@ArAArA?X?V?~@A~@@nA@pAE`Dm@vASl@GTCTCX?ZAnKAHAFGL"},"start_location":{"lat":3.3981947,"lng":-76.53796609999999},"travel_mode":"DRIVING"},{"distance":{"text":"0.1 km","value":138},"duration":{"text":"1 min","value":14},"end_location":{"lat":3.3978631,"lng":-76.5568663},"html_instructions":"At the roundabout, take the <b>2nd</b> exit onto <b>Cl. 1</b>","maneuver":"roundabout-right","polyline":{"points":"eyvSzlgrMCBEFAH?F@D@D@BBDB@BBF@D?D?FABADCN?P@TD@?@?D?BA~@V"},"start_location":{"lat":3.3987452,"lng":-76.5564582},"travel_mode":"DRIVING"},{"distance":{"text":"71 m","value":71},"duration":{"text":"1 min","value":12},"end_location":{"lat":3.3976252,"lng":-76.55744609999999},"html_instructions":"Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>","maneuver":"turn-right","polyline":{"points":"ssvSlogrMAB?@?D?B@B@DN^P`@HV"},"start_location":{"lat":3.3978631,"lng":-76.5568663},"travel_mode":"DRIVING"}],"traffic_speed_entry":[],"via_waypoint":[]}],"overview_polyline":{"points":"mxvSlxcrMvAZEhEA`FApOAfB@lG@pI?rFChEBvFCxE@`HE`Dm@vA[bAGn@AjLCPKPGP@LJPJDJ?JCTCj@FHA~@VAB?F@Fl@~A"},"summary":"Cra. 66","warnings":[],"waypoint_order":[]}],"when":"2019-03-13T01:26:44"}

@@ -6,8 +6,16 @@ defmodule Sb.CasesTest do
   describe "clients" do
     alias Sb.Cases.Client
 
-    @valid_attrs %{first_name: "some first_name", identification: "some identification", last_name: "some last_name"}
-    @update_attrs %{first_name: "some updated first_name", identification: "some updated identification", last_name: "some updated last_name"}
+    @valid_attrs %{
+      first_name: "some first_name",
+      identification: "some identification",
+      last_name: "some last_name"
+    }
+    @update_attrs %{
+      first_name: "some updated first_name",
+      identification: "some updated identification",
+      last_name: "some updated last_name"
+    }
     @invalid_attrs %{first_name: nil, identification: nil, last_name: nil}
 
     def client_fixture(attrs \\ %{}) do
@@ -69,9 +77,51 @@ defmodule Sb.CasesTest do
   describe "events" do
     alias Sb.Cases.Event
 
-    @valid_attrs %{end_event: ~N[2010-04-17 14:00:00], location_lat: 120.5, location_lng: 120.5, name: "some name", poligon_p1_lat: 120.5, poligon_p1_lng: 120.5, poligon_p2_lat: 120.5, poligon_p2_lng: 120.5, poligon_p3_lat: 120.5, poligon_p3_lng: 120.5, poligon_p4_lat: 120.5, poligon_p4_lng: 120.5, start_event: ~N[2010-04-17 14:00:00]}
-    @update_attrs %{end_event: ~N[2011-05-18 15:01:01], location_lat: 456.7, location_lng: 456.7, name: "some updated name", poligon_p1_lat: 456.7, poligon_p1_lng: 456.7, poligon_p2_lat: 456.7, poligon_p2_lng: 456.7, poligon_p3_lat: 456.7, poligon_p3_lng: 456.7, poligon_p4_lat: 456.7, poligon_p4_lng: 456.7, start_event: ~N[2011-05-18 15:01:01]}
-    @invalid_attrs %{end_event: nil, location_lat: nil, location_lng: nil, name: nil, poligon_p1_lat: nil, poligon_p1_lng: nil, poligon_p2_lat: nil, poligon_p2_lng: nil, poligon_p3_lat: nil, poligon_p3_lng: nil, poligon_p4_lat: nil, poligon_p4_lng: nil, start_event: nil}
+    @valid_attrs %{
+      end_event: ~N[2010-04-17 14:00:00],
+      location_lat: 120.5,
+      location_lng: 120.5,
+      name: "some name",
+      poligon_p1_lat: 120.5,
+      poligon_p1_lng: 120.5,
+      poligon_p2_lat: 120.5,
+      poligon_p2_lng: 120.5,
+      poligon_p3_lat: 120.5,
+      poligon_p3_lng: 120.5,
+      poligon_p4_lat: 120.5,
+      poligon_p4_lng: 120.5,
+      start_event: ~N[2010-04-17 14:00:00]
+    }
+    @update_attrs %{
+      end_event: ~N[2011-05-18 15:01:01],
+      location_lat: 456.7,
+      location_lng: 456.7,
+      name: "some updated name",
+      poligon_p1_lat: 456.7,
+      poligon_p1_lng: 456.7,
+      poligon_p2_lat: 456.7,
+      poligon_p2_lng: 456.7,
+      poligon_p3_lat: 456.7,
+      poligon_p3_lng: 456.7,
+      poligon_p4_lat: 456.7,
+      poligon_p4_lng: 456.7,
+      start_event: ~N[2011-05-18 15:01:01]
+    }
+    @invalid_attrs %{
+      end_event: nil,
+      location_lat: nil,
+      location_lng: nil,
+      name: nil,
+      poligon_p1_lat: nil,
+      poligon_p1_lng: nil,
+      poligon_p2_lat: nil,
+      poligon_p2_lng: nil,
+      poligon_p3_lat: nil,
+      poligon_p3_lng: nil,
+      poligon_p4_lat: nil,
+      poligon_p4_lng: nil,
+      start_event: nil
+    }
 
     def event_fixture(attrs \\ %{}) do
       {:ok, event} =
@@ -152,8 +202,18 @@ defmodule Sb.CasesTest do
   describe "promotions" do
     alias Sb.Cases.Promotion
 
-    @valid_attrs %{ammount: 120.5, code: "some code", expiration: ~N[2010-04-17 14:00:00], state: true}
-    @update_attrs %{ammount: 456.7, code: "some updated code", expiration: ~N[2011-05-18 15:01:01], state: false}
+    @valid_attrs %{
+      ammount: 120.5,
+      code: "some code",
+      expiration: ~N[2010-04-17 14:00:00],
+      state: true
+    }
+    @update_attrs %{
+      ammount: 456.7,
+      code: "some updated code",
+      expiration: ~N[2011-05-18 15:01:01],
+      state: false
+    }
     @invalid_attrs %{ammount: nil, code: nil, expiration: nil, state: nil}
 
     def promotion_fixture(attrs \\ %{}) do
@@ -217,9 +277,30 @@ defmodule Sb.CasesTest do
   describe "rides" do
     alias Sb.Cases.Ride
 
-    @valid_attrs %{ammount: 120.5, location_final_lat: 120.5, location_final_lng: 120.5, location_initial_lat: 120.5, location_initial_lng: 120.5, when: ~N[2010-04-17 14:00:00]}
-    @update_attrs %{ammount: 456.7, location_final_lat: 456.7, location_final_lng: 456.7, location_initial_lat: 456.7, location_initial_lng: 456.7, when: ~N[2011-05-18 15:01:01]}
-    @invalid_attrs %{ammount: nil, location_final_lat: nil, location_final_lng: nil, location_initial_lat: nil, location_initial_lng: nil, when: nil}
+    @valid_attrs %{
+      ammount: 120.5,
+      location_final_lat: 120.5,
+      location_final_lng: 120.5,
+      location_initial_lat: 120.5,
+      location_initial_lng: 120.5,
+      when: ~N[2010-04-17 14:00:00]
+    }
+    @update_attrs %{
+      ammount: 456.7,
+      location_final_lat: 456.7,
+      location_final_lng: 456.7,
+      location_initial_lat: 456.7,
+      location_initial_lng: 456.7,
+      when: ~N[2011-05-18 15:01:01]
+    }
+    @invalid_attrs %{
+      ammount: nil,
+      location_final_lat: nil,
+      location_final_lng: nil,
+      location_initial_lat: nil,
+      location_initial_lng: nil,
+      when: nil
+    }
 
     def ride_fixture(attrs \\ %{}) do
       {:ok, ride} =

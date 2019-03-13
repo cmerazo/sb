@@ -11,7 +11,8 @@ defmodule SbWeb.EventView do
   end
 
   def render("event.json", %{event: event}) do
-    %{id: event.id,
+    %{
+      id: event.id,
       name: event.name,
       poligon_p1_lat: event.poligon_p1_lat,
       poligon_p2_lat: event.poligon_p2_lat,
@@ -24,6 +25,7 @@ defmodule SbWeb.EventView do
       location_lat: event.location_lat,
       location_lng: event.location_lng,
       start_event: event.start_event,
-      end_event: event.end_event}
+      end_event: event.end_event
+    }
   end
 end

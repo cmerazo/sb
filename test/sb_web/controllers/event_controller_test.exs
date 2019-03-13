@@ -34,7 +34,21 @@ defmodule SbWeb.EventControllerTest do
     poligon_p4_lng: 456.7,
     start_event: ~N[2011-05-18 15:01:01]
   }
-  @invalid_attrs %{end_event: nil, location_lat: nil, location_lng: nil, name: nil, poligon_p1_lat: nil, poligon_p1_lng: nil, poligon_p2_lat: nil, poligon_p2_lng: nil, poligon_p3_lat: nil, poligon_p3_lng: nil, poligon_p4_lat: nil, poligon_p4_lng: nil, start_event: nil}
+  @invalid_attrs %{
+    end_event: nil,
+    location_lat: nil,
+    location_lng: nil,
+    name: nil,
+    poligon_p1_lat: nil,
+    poligon_p1_lng: nil,
+    poligon_p2_lat: nil,
+    poligon_p2_lng: nil,
+    poligon_p3_lat: nil,
+    poligon_p3_lng: nil,
+    poligon_p4_lat: nil,
+    poligon_p4_lng: nil,
+    start_event: nil
+  }
 
   def fixture(:event) do
     {:ok, event} = Cases.create_event(@create_attrs)
