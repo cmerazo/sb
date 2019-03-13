@@ -267,6 +267,8 @@ curl -H "Content-Type: application/json" -X GET http://54.70.207.40:4000/v1/prom
 
 ### RIDES
 
+take care to capture promotion code automatically generate when the promotion was created and to be sent when validate de ride and promotion
+
 1. To test the validity of the promo code create ride
 
 * (promotion not found)

@@ -18,7 +18,7 @@ defmodule SbWeb.RideController do
         current = NaiveDateTime.utc_now()
         diff = NaiveDateTime.diff(promotion.expiration, current)
 
-        if (diff > 0) do
+        if (diff < 0) do
           conn
           |> put_status(:not_found)
           |> render("expired_promotion.json", code: code)
