@@ -149,7 +149,7 @@ POST /v1/ride
 
 request (sample)
 
-{"ride":{"promotion_code":1,"origin_lat":13.3986171092087156,"origin_lng":-76.53779983520508,"dest_lat:3.3983600699708756,"dest_lng":-96.55779838562012}}
+{"ride":{"promotion_code":"JkOL","origin_lat":13.3986171092087156,"origin_lng":-76.53779983520508,"dest_lat:3.3983600699708756,"dest_lng":-96.55779838562012}}
 
 response (sample)
 
