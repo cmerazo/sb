@@ -41,7 +41,7 @@ and in the trip (origin or destination) must be within this polygon to be accept
 
 ### Clients
 
- column         | datatype |
+ column         | datatype | more
 --------------- | -------- |-------------
  last_name      | String   | required
  first_name     | String   | required
@@ -50,14 +50,15 @@ and in the trip (origin or destination) must be within this polygon to be accept
 
 ### Promotions
 
- column    | datatype | more
----------- | -------- |-------------
-event_id   | integer  | required
-client_id  | integer  | required
-code       | String   | required
-ammount    | float    | required
-expiration | datetime | required
-state      | boolean  | required
+
+ column    | datatype     | more
+---------- | ------------ |-------------
+event_id   | foreing_key  | required
+client_id  | foreing_key  | required
+code       | String       | required
+ammount    | float        | required
+expiration | datetime     | required
+state      | boolean      | required
 
 ### Events
 
@@ -80,15 +81,16 @@ end_event      | datetime | required
 
 ### Rides
 
- column              | datatype | more
--------------------- | -------- |-----------
-promotion_id         | integer  | required
-date                 | datetime | required
-ammount              | float    | required
-location_initial_lat | float    | required
-location_final_lat   | float    | required
-location_initial_lng | float    | required
-location_final_lng   | float    | required
+ column              | datatype     | more
+-------------------- | ------------ |-----------
+promotion_id         | foreing_key  | required
+client_id            | foreing_key  | required
+date                 | datetime     | required
+ammount              | float        | required
+location_initial_lat | float        | required
+location_final_lat   | float        | required
+location_initial_lng | float        | required
+location_final_lng   | float        | required
 
 
 ## Design Most Important Rest API
