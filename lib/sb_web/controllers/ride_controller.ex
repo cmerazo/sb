@@ -15,6 +15,7 @@ defmodule SbWeb.RideController do
     code = ride_params["promotion_code"]
     case Cases.get_promotion_by_code!(code) do
       promotion ->
+        # IO.inspect promotion
         current = NaiveDateTime.utc_now()
         diff = NaiveDateTime.diff(promotion.expiration, current)
 
@@ -26,14 +27,14 @@ defmodule SbWeb.RideController do
           event = Cases.get_event!(promotion.event_id)
 
           points = [[event.poligon_p1_lat,event.poligon_p1_lng],
-                     [event.poligon_p1_lat,event.poligon_p1_lng],
-                      [event.poligon_p1_lat,event.poligon_p1_lng],
-                       [event.poligon_p1_lat,event.poligon_p1_lng]]
+                     [event.poligon_p2_lat,event.poligon_p2_lng],
+                      [event.poligon_p3_lat,event.poligon_p3_lng],
+                       [event.poligon_p4_lat,event.poligon_p4_lng]]
 
           in_range_ori = close_to(0,3,ride_params["origin_lat"],ride_params["origin_lng"],points)
           in_range_dest = close_to(0,3,ride_params["dest_lat"],ride_params["dest_lng"],points)
 
-          if (in_range_ori == false && in_range_dest == false) do
+          if (!in_range_ori && !in_range_dest) do
             conn
             |> put_status(:not_found)
             |> render("range_failed.json", code: code)

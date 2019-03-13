@@ -224,7 +224,7 @@ curl -H "Content-Type: application/json" -X GET  http://54.70.207.40:4000/v1/cli
 1. create a new event
 
 ```
-curl -H "Content-Type: application/json" -X POST -d '{"event":{"name":"Event 5ta Cali Colombia", "poligon_p1_lat":-76.55779838562012,"poligon_p2_lat":-76.5420913696289,"poligon_p3_lat":-76.52780055999756,"poligon_p4_lat":-76.54917240142822,"poligon_p1_lng":3.3983600699708756,"poligon_p2_lng":3.397760311482995,"poligon_p3_lng":3.435929909413671,"poligon_p4_lng":3.441284669553734,"location_lat":-76.54325008392334,"location_lng":3.430917826697575,"start_event":"2019-04-12 20:00:10","end_event":"2019-04-13 04:00:00"}}' http://54.70.207.40:4000/v1/events
+curl -H "Content-Type: application/json" -X POST -d '{"event":{"name":"Event 6ta Cali Colombia","poligon_p1_lng":-76.55779838562012,"poligon_p2_lng":-76.5420913696289,"poligon_p3_lng":-76.52780055999756,"poligon_p4_lng":-76.54917240142822,"poligon_p1_lat":3.3983600699708756,"poligon_p2_lat":3.397760311482995,"poligon_p3_lat":3.435929909413671,"poligon_p4_lat":3.441284669553734,"location_lng":-76.54325008392334,"location_lat":3.430917826697575,"start_event":"2019-04-13 20:00:10","end_event":"2019-04-14 04:00:00"}}' http://54.70.207.40:4000/v1/events
 ```
 
 2. query a event
@@ -244,7 +244,7 @@ curl -H "Content-Type: application/json" -X GET  http://54.70.207.40:4000/v1/eve
 1. create a new promotion
 
 ```
-curl -H "Content-Type: application/json" -X POST -d '{"promotion":{"event_id":1,"client_id":1,"ammount":2000}}' http://54.70.207.40:4000/v1/promotions
+curl -H "Content-Type: application/json" -X POST -d '{"promotion":{"event_id":2,"client_id":1,"ammount":2000}}' http://54.70.207.40:4000/v1/promotions
 ```
 
 2. deactive promotion
@@ -294,7 +294,7 @@ response
 * (promotion valid in range and return poliline)
 
 ```
-curl -H "Content-Type: application/json" -X POST -d '{"ride":{"promotion_code":"JkOL","origin_lat":3.3986171092087156,"origin_lng":-76.53779983520508,"dest_lat":3.3983600699708756,"dest_lng":-76.55779838562012}}' http://54.70.207.40:4000/v1/rides
+curl -H "Content-Type: application/json" -X POST -d '{"ride":{"promotion_code":"ssPK","origin_lat":3.430917826697575,"origin_lng":-76.54325008392334,"dest_lat":3.3983600699708756,"dest_lng":-76.55779838562012}}' http://54.70.207.40:4000/v1/rides
 ```
 
 response
